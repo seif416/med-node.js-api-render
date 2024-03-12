@@ -5,6 +5,7 @@ const Medicine = require('./medicine.js');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv')
 
 
 router.use(express.json());
@@ -109,16 +110,6 @@ router.delete('/delete/:medicinename', async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
 router.get('/request/:medicinename', async (req, res) => {
   try {
     const medicinename = req.params.medicinename;
@@ -132,24 +123,6 @@ router.get('/request/:medicinename', async (req, res) => {
     res.status(500).json({ error: 'Failed to request medicine' });
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
